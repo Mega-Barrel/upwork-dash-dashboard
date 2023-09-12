@@ -1,2 +1,3 @@
-# upwork-dash-dashboard
-chartbrew.com clone for a upwork client
+# Upwork-dash-dashboard
+
+chartbrew.com dashboard clone for an Upwork client!
