@@ -12,10 +12,6 @@ connection = [
                 id='submit-val', 
                 n_clicks=0
             ),
-            # html.H3(
-            #     "Connections Page", 
-            #     style={"color": "#a3004c", "font-family": "changa"}
-            # ),
             width=2,
         ),
         className="ml-5 mb-0",
@@ -24,15 +20,12 @@ connection = [
     html.Br(),
 
     dbc.Row(
-        dbc.Col(
-            html.H2(
-                "Your Connections", 
-                style={
-                    "color": "#a3004c", 
-                    "font-family": "changa"
-                }
-            ),
-            width=2,
+        html.H2(
+            "Your Connections", 
+            style={
+                "color": "#a3004c", 
+                "font-family": "changa"
+            }
         ),
         className="ml-5 mb-0",
     ),
