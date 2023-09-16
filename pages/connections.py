@@ -1,6 +1,6 @@
 import dash_bootstrap_components as dbc
 from utils.dash_navbar import navbar
-from dash import html, dcc
+from dash import html
 
 connection = [
     navbar,
@@ -28,6 +28,24 @@ connection = [
             }
         ),
         className="ml-5 mb-0",
+    ),
+    
+    dbc.Row(
+        [
+            dbc.Col(
+                dbc.Card(
+                    dbc.CardBody(
+                        [
+                            html.H4('Simple Analytics API'),
+                            html.P('Created on September 16, 2023 9:32 PM')
+                        ]
+                    ),
+                    className="mb-3"
+                ),
+                width=6,
+                style={"margin-left": "50px"}   
+            )
+        ]
     ),
 
     html.Br()
