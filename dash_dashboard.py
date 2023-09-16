@@ -1,15 +1,15 @@
 import pandas as pd
 from app import ( app )
 from dash import ( html, Input, Output )
-import dash_bootstrap_components as dbc
 
 from pages import (
     connections as cp,
-    dashboard as dp
+    dashboard as dp,
+    dashboard_and_report as dar,
+    project_settings as ps
 )
 
 from utils import ( 
-    dash_navbar as dn, 
     dash_sidebar as ds
 )
 
@@ -76,9 +76,9 @@ def toggle_collapse(input1, input2, input3, input4, input5, input6, input7):
     if btn_df.idxmax(axis=1).values == "input2":
         return cp.connection
     if btn_df.idxmax(axis=1).values == "input3":
-        return 'content_3'
+        return dar.dashboard_and_report
     if btn_df.idxmax(axis=1).values == "input4":
-        return 'content_4'
+        return ps.project_settings
     if btn_df.idxmax(axis=1).values == "input5":
         return 'content_5'
 
