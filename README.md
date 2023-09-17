@@ -1,3 +1,7 @@
 # Upwork-dash-dashboard
 
-chartbrew.com dashboard clone for an Upwork client!
+**Project setup**
+create a virtual environment using the command: *'virtualenv env'*
+
+**Install the packages**
+pip install -r requirements.txt
