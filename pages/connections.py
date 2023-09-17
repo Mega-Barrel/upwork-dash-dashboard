@@ -37,13 +37,15 @@ connection = [
                     dbc.CardBody(
                         [
                             html.H4('Simple Analytics API'),
-                            html.P('Created on September 16, 2023 9:32 PM')
+                            html.P('Created on September 16, 2023 9:32 PM'),
+                            dbc.Button("Edit", color="primary", className="me-1"),
+                            dbc.Button("Remove", color="danger", className="me-1")
                         ]
                     ),
                     className="mb-3"
                 ),
                 width=6,
-                style={"margin-left": "50px"}   
+                style={"margin-left": "50px"}
             )
         ]
     ),
