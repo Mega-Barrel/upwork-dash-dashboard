@@ -1,6 +1,6 @@
 import pandas as pd
 from app import ( app )
-from dash import ( html, Input, Output )
+from dash import ( html, Input, Output, dcc )
 
 from pages import (
     connections as cp,
@@ -44,19 +44,6 @@ app.layout = html.Div(
         Input("settings", "n_clicks_timestamp")
     ]
 )
-
-# @app.callback(
-#     Output("page_content", "children"),
-#     [
-#         Input("id_1", "n_clicks_timestamp"),
-#         Input("id_2", "n_clicks_timestamp"),
-#         Input("id_3", "n_clicks_timestamp"),
-#         Input("id_4", "n_clicks_timestamp"),
-#         Input("id_5", "n_clicks_timestamp")
-#     ]
-# )
-
-
 def toggle_collapse(input1, input2, input3, input4, input5, input6, input7):
     btn_df = pd.DataFrame(
         {
@@ -82,39 +69,23 @@ def toggle_collapse(input1, input2, input3, input4, input5, input6, input7):
     if btn_df.idxmax(axis=1).values == "input5":
         return 'content_5'
 
-# @app.callback(
-#     Output("page_content", "children"),
-#     [
-#         Input("id_1", "n_clicks_timestamp"),
-#         Input("id_2", "n_clicks_timestamp"),
-#         Input("id_3", "n_clicks_timestamp"),
-#         Input("id_4", "n_clicks_timestamp"),
-#         Input("id_5", "n_clicks_timestamp")
-#     ]
-# )
-
-# def toggle_collapse(
-#     input1, input2, input3, input4, input5
-# ):
-#     btn_df = pd.DataFrame({"input1": [input1], "input2": [input2],
-#                            "input3": [input3], "input4": [input4], 
-#                            "input5": [input5]})
-    
-#     btn_df = btn_df.fillna(0)
-
-#     if btn_df.idxmax(axis=1).values == "input1":
-#         return dp.dashboard
-#     if btn_df.idxmax(axis=1).values == "input2":
-#         return cp.connection
-#     if btn_df.idxmax(axis=1).values == "input3":
-#         return 'content_3'
-#     if btn_df.idxmax(axis=1).values == "input4":
-#         return 'content_4'
-#     if btn_df.idxmax(axis=1).values == "input5":
-#         return 'content_5'
+# Graph button callback
+@app.callback(
+    Output("item-clicks", "children"), 
+    [
+        Input("update-button", "n_clicks"),
+        Input("extract-button", "n_clicks")
+    ]
+)
+def count_clicks(update, extract):
+    # Callback to handle data extraction and data updation
+    if update:
+        return f""
+    if extract:
+        return f""
 
 if __name__ == "__main__":
     app.run_server(
-        debug = False, 
+        debug = True, 
         port = 8080
     )
