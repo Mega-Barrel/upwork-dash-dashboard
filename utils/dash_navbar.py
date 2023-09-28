@@ -37,27 +37,37 @@ navbar = dbc.Navbar(
                             html.Img(
                                 src=PLOTLY_LOGO,
                                 height="30px"
-                            )
+                            ),
+                            style={"marginLeft": "-100%"}
                         ),
                         dbc.Col(
                             dbc.NavbarBrand(
                                 "chartbrew.com",
                                 className="ms-2"
-                            )
+                            ),
+                            style={"marginLeft": "-80%"}
                         ),
                     ],
-                    align="left",
+                    align="center",
                     className="g-0",
                 ),
                 href="https://plotly.com",
                 style={"textDecoration": "none"},
+                className="me-auto"
             ),
+
+
             dbc.NavbarToggler(id="navbar-toggler2", n_clicks=0),
             dbc.Collapse(
                 dbc.Nav(
-                    [nav_item_update, nav_item_help, nav_item_settings],
+                    [
+                        nav_item_update, 
+                        nav_item_help, 
+                        nav_item_settings
+                    ],
                     className="ms-auto",
                     navbar=True,
+                    style={"marginRight": "-13%"}
                 ),
                 id="navbar-collapse2",
                 navbar=True,
@@ -68,7 +78,4 @@ navbar = dbc.Navbar(
     dark=False,
     className="mb-5",
     sticky='top',
-    style={
-        'margin-left': '70px'
-    }
 )
